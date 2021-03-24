@@ -6,6 +6,13 @@
         "nura24",
         "laravel"
     ],
+    "author": [
+        {
+            "name": "Chimilevschi Iosif-Gabriel",
+            "email": "office@nura24.com",
+            "role": "Founder and developer"
+        }
+    ],
     "license": "Apache-2.0",
     "require": {
         "php": "^7.3.0",
@@ -53,7 +60,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
