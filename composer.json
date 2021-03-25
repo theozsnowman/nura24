@@ -62,17 +62,19 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump"            
-        ],
+    "scripts": {        
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
+            "chgrp -R www-data storage bootstrap/cache",
+
+            "chmod -R ug+rwx storage bootstrap/cache" 
+        ],
+	"post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
-        ]
-        
+        ]        
     }
 }
