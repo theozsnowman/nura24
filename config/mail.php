@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.eu.mailgun.org',
+    'host' => 'smtp.mailgun.org',
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'office@nura24.com',
-        'name' => 'Nura24',
+        'address' => '',
+        'name' => '',
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => 'postmaster@mailgun.nura24.com',
+    'username' => '',
 
-    'password' => '4ac279581e1728716f45ca0c16e8db5d-0afbfc6c-186516b2',
+    'password' => '',
 
     /*
     |--------------------------------------------------------------------------

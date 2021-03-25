@@ -15,9 +15,9 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'mailgun.nura24.com',
-        'secret' => 'key-c2507ae76da4c5051a88027fa911f6f3',
-        'endpoint' => 'api.eu.mailgun.net',
+        'domain' => '',
+        'secret' => '',
+        'endpoint' => 'api.mailgun.net',
     ],
 
     'postmark' => [
