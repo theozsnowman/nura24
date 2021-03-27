@@ -21,19 +21,10 @@ Nura24 Suite is build using latest version of [**Laravel Framework**](https://la
 
 ## Requirements
 
-You should ensure that your web server has the following minimum PHP version and extensions:
-- PHP >= 7.3
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+Web server: Apache with mod_rewrite enabled (.htaccess files) or Nginx.
+[Laravel Framework requirements](https://laravel.com/docs/8.x/deployment#server-requirements)
 
-## :star: **Clevada - Fastest Cloud Hosting for Businesses and Individuals**
+## :star: **Clevada - Fastest Cloud Hosting for Nura24 Suite**
 
 We are very good to security and server management so we create a Cloud Hosting Service to host your websites. 
 
