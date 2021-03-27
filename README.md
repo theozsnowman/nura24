@@ -11,18 +11,14 @@ Forget about installing and updating tons of plugins. Forget paying hundred or e
 - **Help Desk**: Support Tickets, Knowledge Base, FAQ manager, Contact Page Manager
 - **Email Marketing**: Create email campaigns and send bulk emails to customers
 
-Nura24 Suite is build using latest version of **Laravel Framework**, making it the best alternative for developers. Responsive templates are build using **Bootstrap Framework**.
-
 Nura24 follows the best development practices, code is optimised for SEO, security and performance.
 
 With Nura24 Suite you can create a **full multilingual website** (make translations and add different content for each language ).
 
 
-## Learning Laravel
+## Framework and Requirements
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Nura24 Suite is build using latest version of **[Laravel Framework]**(https://laravel.com/docs), making it the best alternative for developers. Responsive templates are build using **[Bootstrap Framework]**(https://getbootstrap.com).
 
 
 ## Contributing
