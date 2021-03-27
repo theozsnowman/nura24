@@ -15,13 +15,17 @@ Nura24 follows the best development practices, code is optimised for SEO, securi
 
 With Nura24 Suite you can create a **full multilingual website** (make translations and add different content for each language).
 
-| :exclamation:  This is very important   |
-|-----------------------------------------|
+## :star: **Clevada - Fastest Cloud Hosting for Businesses and Individuals**
 
+We are very good to security and server management so we create a Cloud Hosting Service to host your websites. 
 
-## :star: **Clevada Cloud Hosting**
-
-**dsdsafd sfds fgfgfdfdg dfg**
+Advantages:
+- We install your Nura24 Suite for FREE
+- Full cPanel  and FTP access
+- Developer friendly: Composer available, SSH access, latest PHP version, free SSL certificate
+- Superior Performance: Our scalable servers provides 3x faster performance and reliability compared to major hosting companies.
+- Fastest DNS: We provide high speed, low latency and DDOS protected nameservers with 100% uptime.
+- We are NOT resellers. We have high performance servers, located in the major cloud providers datacenters.
 
 ## Framework
 
