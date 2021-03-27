@@ -15,11 +15,23 @@ Nura24 follows the best development practices, code is optimised for SEO, securi
 
 With Nura24 Suite you can create a **full multilingual website** (make translations and add different content for each language ).
 
-
-## Framework and Requirements
+## Framework
 
 Nura24 Suite is build using latest version of [**Laravel Framework**](https://laravel.com/docs), making it the best alternative for developers. Responsive templates are build using [**Bootstrap Framework**](https://getbootstrap.com).
 
+## Requirements
+
+You should ensure that your web server has the following minimum PHP version and extensions:
+- PHP >= 7.3
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP Extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
 
 ## Contributing
 
