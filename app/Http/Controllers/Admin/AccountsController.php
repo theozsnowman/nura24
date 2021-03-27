@@ -1,6 +1,20 @@
 <?php
+
 /**
- * Copyright: Nura24 - https://www.nura24.com
+    * Nura24: #1 Open Source Suite for Businesses, Communities, Teams, Collaboration and Personal Websites.
+    *
+    * Copyright (C) 2021  Chimilevschi Iosif-Gabriel, https://nura24.com.
+    *
+    * LICENSE:
+    * Nura24 is licensed under the GNU General Public License v3.0
+    * Permissions of this strong copyleft license are conditioned on making available complete source code 
+    * of licensed works and modifications, which include larger works using a licensed work, under the same license. 
+    * Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+    *    
+    * @copyright   Copyright (c) 2021, Chimilevschi Iosif-Gabriel, https://nura24.com.
+    * @license     https://opensource.org/licenses/GPL-3.0  GPL-3.0 License.
+    * @version     2.1.1
+    * @author      Chimilevschi Iosif-Gabriel <office@nura24.com>
 */
 
 namespace App\Http\Controllers\Admin;
@@ -24,19 +38,17 @@ class AccountsController extends Controller
         $this->middleware('auth');
         $this->UserModel = new User();      
         $this->UploadModel = new Upload();    
-                
+
         $this->roles = DB::table('users_roles')->where('active', 1)->orderBy('id', 'asc')->get();      
         $this->role_id_internal = $this->UserModel->get_role_id_from_role('internal');
         $this->role_id_user = $this->UserModel->get_role_id_from_role('user');
 
         $this->middleware(function ($request, $next) {
-            $this->logged_user_role_id = Auth::user()->role_id;
-            $this->logged_user_id = Auth::user()->id;            
-            $this->logged_user_role = $this->UserModel->get_role_from_id ($this->logged_user_role_id);    
-
-            if(! ($this->logged_user_role == 'admin' || $this->logged_user_role == 'internal')) return redirect('/'); 
+            $this->role_id = Auth::user()->role_id;            
+            $role = $this->UserModel->get_role_from_id($this->role_id);    
+            if(! ($role == 'admin' || $this->logged_user_role == 'internal')) return redirect('/'); 
             return $next($request);
-        });
+        });               
     }
 
     

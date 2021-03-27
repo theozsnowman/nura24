@@ -1,4 +1,22 @@
 <?php
+
+/**
+    * Nura24: #1 Open Source Suite for Businesses, Communities, Teams, Collaboration and Personal Websites.
+    *
+    * Copyright (C) 2021  Chimilevschi Iosif-Gabriel, https://nura24.com.
+    *
+    * LICENSE:
+    * Nura24 is licensed under the GNU General Public License v3.0
+    * Permissions of this strong copyleft license are conditioned on making available complete source code 
+    * of licensed works and modifications, which include larger works using a licensed work, under the same license. 
+    * Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+    *    
+    * @copyright   Copyright (c) 2021, Chimilevschi Iosif-Gabriel, https://nura24.com.
+    * @license     https://opensource.org/licenses/GPL-3.0  GPL-3.0 License.
+    * @version     2.1.1
+    * @author      Chimilevschi Iosif-Gabriel <office@nura24.com>
+*/
+
 namespace App\Http\Middleware;
 
 use Closure;
@@ -10,9 +28,6 @@ use App\Models\Core;
 use App\Models\User;
 use Auth;
 use Session;
-
-use Illuminate\Contracts\Encryption\DecryptException;
-use Illuminate\Support\Facades\Crypt;
 
 class Nura
 {
@@ -26,60 +41,13 @@ class Nura
     public function handle($request, Closure $next)
     {           
 
-        config(['nura.version' => '1.2']);
+        config(['nura.version' => '2.1.1']);
 
         $CoreModel = new Core(); 
                 
         // config
         $config = Core::config();      
-                       
-        
-        // license key
-        $sys_license_plan = null;
-        $sys_license_expire = null;
-        $sys_valid_license_key = false;
-
-        $license_key = $config->license_key ?? null;
-
-        if($license_key) {
-            $license_cipher = "BF-OFB";
-            $license_iv = 'n24_!f97';
-            $license_secret = 'FR_GRc34Q]Vd.+UAfg8';
-            $decripted_license_key = openssl_decrypt($license_key, $license_cipher, $license_secret, $options=0, $license_iv);    
-
-            $license_exploded = explode('#', $decripted_license_key);
-            $license_domain = $license_exploded[0] ?? null;
-            $license_plan = $license_exploded[1] ?? null;
-            $license_expire = $license_exploded[2] ?? null;                        
-
-            if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1' || $_SERVER['SERVER_NAME'] == 'dev.'.$license_domain || $_SERVER['SERVER_NAME'] == $license_domain)
-                {
-                    $sys_license_plan = $license_plan;
-                    $sys_license_expire = $license_expire;
-                    if(! $license_expire or $license_expire >= date("Y-m-d")) $sys_valid_license_key = true;
-                }            
-
-            if($license_expire) {
-                // check if valid date
-                $d = \DateTime::createFromFormat('Y-m-d', $license_expire);    
-                $valid_date =  $d && $d->format('Y-m-d') === $license_expire;
-                if(! $valid_date) $sys_valid_license_key = false;
-            }
-        }
-
-        // if not PRO license, disable multilanguages and internal accounts
-        if(! $sys_valid_license_key) {
-            DB::table('sys_lang')->where('is_default', 0)->update(['status' => 'inactive']);     
-
-            if(($logged_user_role ?? null) && $logged_user_role == 'internal') {
-                Auth::logout();
-                Session::flush();
-                return redirect('login')->with('error', 'invalid_license_key');
-            }
-        }
-
-
-            
+                                
         if(config('app.demo_mode')) {                    
             $template = $request->template;            
 
@@ -149,4 +117,5 @@ class Nura
         if($template_cookie ?? null) return $next($request)->cookie($template_cookie);
         else return $next($request);
     }
+    
 }
