@@ -38,13 +38,13 @@ We are very good to security and server management so we create a Cloud Hosting 
 - We are NOT resellers. We have high performance servers, located in the major cloud providers datacenters.
 
 ## Installation
-- Your hosting must have Composer and give you shell access (SSH).
+1 Your hosting must have Composer and give you shell access (SSH) and ftp access outside your "public" folder.
 
-- ``composer create-project nuradev/nura24 myfolder``
+2 ``composer create-project nuradev/nura24 myfolder``
 
 This command will install Nura24 Suite in "myfolder" (you can rename to use any folder name).
     
-- Go to "myfolder', rename '.env.default' to '.env'. Edit this file and set your app name, app url and database credentials.
+3 Go to "myfolder', rename '.env.default' to '.env'. Edit this file and set your app name, app url and database credentials.
 
 Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE. 
 
