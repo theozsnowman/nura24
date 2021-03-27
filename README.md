@@ -1,14 +1,11 @@
 <p align="center"><img src="https://nura24.com/assets/img/logo-github.png" alt="Nura24"></p>
 
-
-## About Nura24
-
 ### Nura24 is a free suite for businesses, communities, teams, collaboration or personal websites. Create a free and professional website in minutes.
 
 Forget about installing and updating tons of plugins. Forget paying hundred or even thousands USD for other suites with the same features.
 
-Modules:
-- CMS: blog, posts, pages, downloads, blocks, slider...
+### Modules:
+- ### CMS: blog, posts, pages, downloads, blocks, slider...
 - eCommerce: Sell downloadable products or services
 - Community Forum: Create a community for your website
 - Help Desk: Support Tickets, Knowledge Base, FAQ manager, Contact Page Manager
