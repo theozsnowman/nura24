@@ -5,11 +5,11 @@
 Forget about installing and updating tons of plugins. Forget paying hundred or even thousands USD for other suites with the same features.
 
 ### Modules:
-- ### CMS: blog, posts, pages, downloads, blocks, slider...
-- eCommerce: Sell downloadable products or services
-- Community Forum: Create a community for your website
-- Help Desk: Support Tickets, Knowledge Base, FAQ manager, Contact Page Manager
-- Email Marketing: Create email campaigns and send bulk emails to customers
+- **CMS**: blog, posts, pages, downloads, blocks, slider...
+- **eCommerce**: Sell downloadable products or services
+- **Community Forum**: Create a community for your website
+- **Help Desk**: Support Tickets, Knowledge Base, FAQ manager, Contact Page Manager
+- **Email Marketing**: Create email campaigns and send bulk emails to customers
 
 Nura24 Suite is build using latest version of Laravel Framework, making it the best alternative for developers. Responsive templates are build using Bootstrap framework.
 
