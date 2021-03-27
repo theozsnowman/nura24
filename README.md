@@ -13,7 +13,14 @@ Forget about installing and updating tons of plugins. Forget paying hundred or e
 
 Nura24 follows the best development practices, code is optimised for SEO, security and performance.
 
-With Nura24 Suite you can create a **full multilingual website** (make translations and add different content for each language ).
+With Nura24 Suite you can create a **full multilingual website** (make translations and add different content for each language).
+
+| :exclamation:  This is very important   |
+|-----------------------------------------|
+
+
+| :zap:        Ignore at your own risk!   |
+|-----------------------------------------|
 
 ## Framework
 
@@ -32,6 +39,8 @@ You should ensure that your web server has the following minimum PHP version and
 - PDO PHP Extension
 - Tokenizer PHP Extension
 - XML PHP Extension
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
 
 ## Contributing
 
