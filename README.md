@@ -22,6 +22,7 @@ Nura24 Suite is build using latest version of [**Laravel Framework**](https://la
 ## Requirements
 
 Web server: Apache with mod_rewrite enabled (.htaccess files) or Nginx.
+
 [Laravel Framework requirements](https://laravel.com/docs/8.x/deployment#server-requirements)
 
 ## :star: **Clevada - Fastest Cloud Hosting for Nura24 Suite**
