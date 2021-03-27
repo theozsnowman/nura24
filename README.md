@@ -19,7 +19,8 @@ With Nura24 Suite you can create a **full multilingual website** (make translati
 |-----------------------------------------|
 
 
-:star: **Clevada Cloud Hosting**
+### :star: **Clevada Cloud Hosting**
+
 **dsdsafd sfds fgfgfdfdg dfg**
 
 ## Framework
