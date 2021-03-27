@@ -19,7 +19,8 @@ With Nura24 Suite you can create a **full multilingual website** (make translati
 |-----------------------------------------|
 
 
-| :zap:        Ignore at your own risk!   |
+| :star:        **Clevada**   |
+| sdf fdfsf |
 |-----------------------------------------|
 
 ## Framework
