@@ -25,11 +25,11 @@ Web server: Apache with mod_rewrite enabled (.htaccess files) or Nginx.
 
 [Laravel Framework requirements](https://laravel.com/docs/8.x/deployment#server-requirements)
 
-## :star: **Clevada - Fastest Cloud Hosting for Nura24 Suite**
+## :star: **[Clevada](https://clevada.com/nura24-hosting) - Fastest Cloud Hosting for Nura24 Suite**
 
 We are very good to security and server management so we create a Cloud Hosting Service to host your websites. 
 
-[**Clevada](https://clevada.com/nura24-hosting) Cloud Hosting Advantages:**
+**Clevada Cloud Hosting Advantages:**
 - **We install your Nura24 Suite for FREE and you have 3 days free hosting to test our servers performance.**
 - Full cPanel  and FTP access
 - Developer friendly: Composer available, SSH access, latest PHP version, free SSL certificate
