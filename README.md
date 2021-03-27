@@ -15,18 +15,6 @@ Nura24 follows the best development practices, code is optimised for SEO, securi
 
 With Nura24 Suite you can create a **full multilingual website** (make translations and add different content for each language).
 
-## :star: **Clevada - Fastest Cloud Hosting for Businesses and Individuals**
-
-We are very good to security and server management so we create a Cloud Hosting Service to host your websites. 
-
-Advantages:
-- We install your Nura24 Suite for FREE
-- Full cPanel  and FTP access
-- Developer friendly: Composer available, SSH access, latest PHP version, free SSL certificate
-- Superior Performance: Our scalable servers provides 3x faster performance and reliability compared to major hosting companies.
-- Fastest DNS: We provide high speed, low latency and DDOS protected nameservers with 100% uptime.
-- We are NOT resellers. We have high performance servers, located in the major cloud providers datacenters.
-
 ## Framework
 
 Nura24 Suite is build using latest version of [**Laravel Framework**](https://laravel.com/docs), making it the best alternative for developers. Responsive templates are build using [**Bootstrap Framework**](https://getbootstrap.com).
@@ -45,7 +33,29 @@ You should ensure that your web server has the following minimum PHP version and
 - Tokenizer PHP Extension
 - XML PHP Extension
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+## :star: **Clevada - Fastest Cloud Hosting for Businesses and Individuals**
+
+We are very good to security and server management so we create a Cloud Hosting Service to host your websites. 
+
+**Clevada Cloud Hosting Advantages:**
+- **We install your Nura24 Suite for FREE and you have 3 days free hosting to test our servers performance.**
+- Full cPanel  and FTP access
+- Developer friendly: Composer available, SSH access, latest PHP version, free SSL certificate
+- Superior Performance: Our scalable servers provides 3x faster performance and reliability compared to major hosting companies.
+- Fastest DNS: We provide high speed, low latency and DDOS protected nameservers with 100% uptime.
+- We are NOT resellers. We have high performance servers, located in the major cloud providers datacenters.
+
+## Installation
+Your hosting must have Composer and give you shell access (SSH).
+
+composer create-project nuradev/nura24 myfolder
+
+This command will install Nura24 Suite in <myfolder> (you can rename to use any folder name).
+    
+Go to <myfolder>, rename '.env.default' to '.env'. Edit this file and set your app name, app url and database credentials.
+
+Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE. 
+
 
 ## Contributing
 
