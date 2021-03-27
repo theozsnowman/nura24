@@ -62,5 +62,4 @@ In order to ensure that the Laravel community is welcoming to all, please review
 If you discover a security vulnerability within Laravel, please send an e-mail to Gabriel Chimilevschi via [office@nura24.com](mailto:office@nura24.com). All security vulnerabilities will be promptly addressed.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [GPL-3.0 License](https://opensource.org/licenses/GPL-3.0).
+Nura24 Suite is open-sourced software licensed under the [GPL-3.0 License](https://opensource.org/licenses/GPL-3.0).
