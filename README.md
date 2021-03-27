@@ -18,7 +18,7 @@ With Nura24 Suite you can create a **full multilingual website** (make translati
 
 ## Framework and Requirements
 
-Nura24 Suite is build using latest version of **[Laravel Framework]**(https://laravel.com/docs), making it the best alternative for developers. Responsive templates are build using **[Bootstrap Framework]**(https://getbootstrap.com).
+Nura24 Suite is build using latest version of [**Laravel Framework**](https://laravel.com/docs), making it the best alternative for developers. Responsive templates are build using [**Bootstrap Framework**](https://getbootstrap.com).
 
 
 ## Contributing
