@@ -40,7 +40,7 @@ We are very good to security and server management so we create a Cloud Hosting 
 ## Installation
 Your hosting must have Composer and give you shell access (SSH).
 
-composer create-project nuradev/nura24 myfolder
+``composer create-project nuradev/nura24 myfolder``
 
 This command will install Nura24 Suite in <myfolder> (you can rename to use any folder name).
     
