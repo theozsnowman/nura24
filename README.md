@@ -62,6 +62,10 @@ You will be prompted to set administrator credentials (name, email and password)
 - Option 1: Your web server must directs all requests to your application's public/index.php file (located in your folder where you install the suite). This can be set if you have full access to your server configuration.
 - Option 2: If your hosting do not permit access to server configuration, you can move folders and files inside "public" folder to your server public folder (for example: "public_html" if you use Apache Web Server).
 
+6. Give write access (chmod 777) this folders:
+- Inside your application folder: "bootstrap/cache" and all folders inside "storage" folder.
+- Inside your public folder: "uploads" folder.
+
 Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE if you choose to host your website to us. 
 
 
