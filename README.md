@@ -58,7 +58,11 @@ The last argument ("nura24") is the root folder where application will be instal
 This will install and setup your suite: create tables, add core data into tables, create administrator account.
 You will be prompted to set administrator credentials (name, email and password).
 
-Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE. 
+5. **Setup your public folder**. 
+- Option 1: Your web server must directs all requests to your application's public/index.php file (located in your folder where you install the suite). This can be set if you have full access to your server configuration.
+- Option 2: If your hosting do not permit access to server configuration, you can move folders and files inside "public" folder to your server public folder (for example: "public_html" if you use Apache Web Server).
+
+Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE if you choose to host your website to us. 
 
 
 ## Security Vulnerabilities
