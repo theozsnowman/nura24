@@ -10,7 +10,7 @@ Forget about installing and updating tons of plugins. Forget paying hundred or e
 - **Community Forum**: Create a community for your website
 - **Help Desk**: Support Tickets, Knowledge Base, FAQ manager, Contact Page Manager
 - **Email Marketing**: Create email campaigns and send bulk emails to customers
-- many other modules in development (Live Chat, Bookings, CRM, Projects Management...)
+- many other modules in development (Live Chat, Bookings, CRM, Projects Management, Intranet...)
 
 Nura24 follows the best development practices, code is optimised for SEO, security and performance.
 
