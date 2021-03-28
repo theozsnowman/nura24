@@ -41,7 +41,9 @@ We are very good to security and server management so we create a Cloud Hosting 
 ## Installation
 Your hosting must have Composer and give you shell access (SSH) and ftp access outside your "public" folder.
 
-``composer create-project nuradev/nura24 nura24``
+- ``composer create-project nuradev/nura24 nura24``
+- ``cd nura24``
+- ``php artisan install``
 
 This will download Nura24 suite (latest version) on your server.
 The last argument ("nura24") is the root folder where application will be installed. You can use any folder name.
