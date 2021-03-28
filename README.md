@@ -43,7 +43,7 @@ Your hosting must have Composer and give you shell access (SSH) and ftp access o
 
 1. ``composer create-project nuradev/nura24 nura24``
 
-This will download latest version of Nura24 suite on your server.
+This will **download latest version** of Nura24 suite on your server.
 The last argument ("nura24") is the root folder where application will be installed. You can use any folder name (must not exists).
 **It is strongly recommended to install the suite in a folder outside your public folder**.
 
@@ -55,10 +55,10 @@ The last argument ("nura24") is the root folder where application will be instal
 
 4. ``php artisan install``
 
-This will install and setup your suite: create tables, add core data into tables, create administrator account.
+This will **install and setup** your suite: create tables, add core data into tables, create administrator account.
 You will be prompted to set administrator credentials (name, email and password).
 
-5. **Setup your public folder**. 
+5. **Setup your public folder:**. 
 - Option 1: Your web server must directs all requests to your application's public/index.php file (located in your folder where you install the suite). This can be set if you have full access to your server configuration.
 - Option 2: If your hosting do not permit access to server configuration, you can move folders and files inside "public" folder to your server public folder (for example: "public_html" if you use Apache Web Server).
 
