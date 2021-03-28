@@ -66,6 +66,9 @@ You will be prompted to set administrator credentials (name, email and password)
 - Inside your application folder: "**/bootstrap/cache**" and all folders inside "**/storage**" folder.
 - Inside your public folder: "**/uploads**" folder.
 
+7. (optional). If you have modules that require cron jobs (eCOmmerce module for example), ou must setup cron job in your hosting account to run every minute. More details" [Setup Laravel Cron](https://laravel.com/docs/8.x/scheduling#running-the-scheduler).
+
+
 Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE if you choose to host your website to us. 
 
 
