@@ -41,9 +41,9 @@ We are very good to security and server management so we create a Cloud Hosting 
 ## Installation
 1. Your hosting must have Composer and give you shell access (SSH) and ftp access outside your "public" folder.
 
-2. ``composer create-project nuradev/nura24 myfolder``
+2. ``composer create-project nuradev/nura24 nura24``
 
-This command will install Nura24 Suite in "myfolder" (you can rename to use any folder name).
+The last argument ("nura24") is the root folder where application will be installed. You can use any folder name.
     
 3. Go to "myfolder', rename '.env.default' to '.env'. Edit this file and set your app name, app url and database credentials.
 
