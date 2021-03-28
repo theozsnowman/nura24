@@ -43,9 +43,16 @@ We are very good to security and server management so we create a Cloud Hosting 
 
 2. ``composer create-project nuradev/nura24 nura24``
 
+This will download Nura24 suite (latest version) on your server.
 The last argument ("nura24") is the root folder where application will be installed. You can use any folder name.
+It is strongly recommended to install the suite in a folder outside your public folder.
     
 3. Go to "myfolder', rename '.env.default' to '.env'. Edit this file and set your app name, app url and database credentials.
+
+4. Install Nura24 suite by running this commands in your console:
+``cd nura24`` (change directorty to your folder where you download the suite
+``php artisan install``(this will install and setup your suite: create tables, add core data into tables, create administrator account)
+
 
 Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE. 
 
