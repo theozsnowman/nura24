@@ -15,7 +15,7 @@ return [
 
     'paths' => [
         //resource_path('views'),
-        base_path('../public_html/templates'),
+        public_path('templates'),
     ],
 
     /*

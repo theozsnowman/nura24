@@ -21,8 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-
         $this->app->bind('path.public', function() {
             return getcwd();
         });
@@ -38,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
     {        
         Paginator::useBootstrap();
         
-	 Schema::defaultStringLength(191);
+	    Schema::defaultStringLength(191);
 
         if($this->app->environment('production')) {
             \URL::forceScheme('https');

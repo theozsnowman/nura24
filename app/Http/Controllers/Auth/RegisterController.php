@@ -91,8 +91,6 @@ class RegisterController extends Controller
             else exit('Recaptcha error. Go back and try again');
         }
         
-
-
         // get role ID for user
         $role_id =  $this->UserModel->get_role_id_from_role('user');
         $code = strtoupper(Str::random(8));

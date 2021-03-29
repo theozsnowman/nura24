@@ -76,8 +76,8 @@ class Nura
             $homepage_meta_title = $sys_lang_query->homepage_meta_title ?? null;        
             $homepage_meta_description = $sys_lang_query->homepage_meta_description ?? null;        
         } else {
-            $locale = default_lang()->code;
-            $setlocale = default_lang()->locale;    
+            $locale = default_lang()->code ?? 'en';
+            $setlocale = default_lang()->locale ?? 'en';    
 
             // SEO and homepage
             $site_short_title = default_lang()->site_short_title ?? null;        
@@ -96,9 +96,9 @@ class Nura
         
         View::share('config', $config);
         
-        View::share('template_path', 'templates/frontend/'.$config->template);
+        View::share('template_path', 'templates/frontend/'.($config->template ?? 'nura24_default'));
 
-        View::share('template_view', 'frontend/'.$config->template);
+        View::share('template_view', 'frontend/'.($config->template ?? 'nura24_default'));
         
         View::share('request_path', $request->path() ?? null);
 
@@ -107,12 +107,6 @@ class Nura
         View::share('homepage_meta_title', $homepage_meta_title ?? null);
         
         View::share('homepage_meta_description', $homepage_meta_description ?? null);
-
-        View::share('sys_license_plan', $sys_license_plan);
-        
-        View::share('sys_license_expire', $sys_license_expire);
-        
-        View::share('sys_valid_license_key', $sys_valid_license_key);
 
         if($template_cookie ?? null) return $next($request)->cookie($template_cookie);
         else return $next($request);
