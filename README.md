@@ -59,6 +59,7 @@ This will **install and setup** your suite: create tables, add core data into ta
 You will be prompted to set administrator credentials (name, email and password).
 
 5. **Move folders and files inside "public" folder to your server public folder** (for example: "public_html" if you use Apache Web Server).
+
 *Note: If you have access to server configuration, you can keep "public" folder inside your application folder but you must configure your web server to directs all requests to your application's public/index.php file.*
 
 6. **Give write access** (chmod 777) to this folders:
