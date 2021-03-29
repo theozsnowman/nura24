@@ -10,7 +10,7 @@ Forget about installing and updating tons of plugins. Forget paying hundred or e
 - **Community Forum**: Create a community for your website
 - **Help Desk**: Support Tickets, Knowledge Base, FAQ manager, Contact Page Manager
 - **Email Marketing**: Create email campaigns and send bulk emails to customers
-- many other modules in development (Live Chat, Bookings, CRM, Projects Management...)
+- many other modules in development (Live Chat, Bookings, CRM, Projects Management, Intranet...)
 
 Nura24 follows the best development practices, code is optimised for SEO, security and performance.
 
@@ -39,24 +39,37 @@ We are very good to security and server management so we create a Cloud Hosting 
 - We are NOT resellers. We have high performance servers, located in the major cloud providers datacenters.
 
 ## Installation
-1. Your hosting must have Composer and give you shell access (SSH) and ftp access outside your "public" folder.
+Your hosting must have Composer and give you shell access (SSH) and ftp access outside your "public" folder.
 
-2. ``composer create-project nuradev/nura24 nura24``
+1. ``composer create-project nuradev/nura24 nura24``
 
-The last argument ("nura24") is the root folder where application will be installed. You can use any folder name.
-    
-3. Go to "myfolder', rename '.env.default' to '.env'. Edit this file and set your app name, app url and database credentials.
+This will **download latest version** of Nura24 suite on your server.
+The last argument ("nura24") is the root folder where application will be installed. You can use any folder name (must not exists).
+**It is strongly recommended to install the suite in a folder outside your public folder**.
 
-Note: If your hosting do not provide Cmposer / SSH access, you can use our high performkance cloud hosting on our hosting services: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE. 
+2. Go to "nura24' (or folder name where you download thge suite). **Edit '.env' file and set your app name, app url and database credentials**.
+
+3. ``cd nura24``
+
+(change directorty to your folder where you download the suite)
+
+4. ``php artisan install``
+
+This will **install and setup** your suite: create tables, add core data into tables, create administrator account.
+You will be prompted to set administrator credentials (name, email and password).
+
+5. **Move folders and files inside "public" folder to your server public folder** (for example: "public_html" if you use Apache Web Server).
+*Note: If you have access to server configuration, you can keep "public" folder inside your application folder but you must configure your web server to directs all requests to your application's public/index.php file.*
+
+6. **Give write access** (chmod 777) to this folders:
+- Inside your application folder: "**/bootstrap/cache**" and all folders inside "**/storage**" folder.
+- Inside your public folder: "**/uploads**" folder.
+
+7. (optional). If you have modules that require cron jobs (eCommerce module for example), you must setup cron job in your hosting account to run every minute. More details:  [Setup Laravel Cron](https://laravel.com/docs/8.x/scheduling#running-the-scheduler).
 
 
-## Contributing
+**Note: If your hosting do not provide Composer / SSH access, you can use our high performance cloud hosting on our hosting servers: [Clevada Cloud Hosting](https://clevada.com/nura24-hosting). We can also install / setup your Nura24 Suite on your domain for FREE if you choose to host your website to us**. 
 
-Thank you for considering contributing to the Nura24 Suite! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
 ## Security Vulnerabilities
 
