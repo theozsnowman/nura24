@@ -3,6 +3,7 @@
     <img src="https://img.shields.io/github/stars/nuradev/nura24" alt="forks">
     <img src="https://img.shields.io/badge/downloads-1.2k-brightgreen" alt="downloads">
     <img src="https://img.shields.io/github/license/nuradev/nura24" alt="license">
+    <img src="https://img.shields.io/facebook/url?url=https%3A%2F%2Ffacebook.com%2Fnura.software" alt="facebook">
 </p>
     
 <p align="center"><img src="https://nura24.com/assets/img/logo-github.png" alt="Nura24"></p>
