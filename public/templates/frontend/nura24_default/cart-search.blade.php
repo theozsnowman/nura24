@@ -20,7 +20,7 @@
 
             @include("{$template_view}.blocks.search-cart")      
 
-            <section>
+            <section class="bar background-white no-mb">
 
                 <div class="container">
                    
@@ -66,9 +66,7 @@
                         </div>
 
                     </div>
-
                 </div>
-                
             </section>
 
         </div>

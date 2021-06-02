@@ -7,7 +7,7 @@
     <title>{{ __('Documentation') }}</title>
     <meta name="description" content="Documentation">
 
-    @include("{$template_view}.global.head")
+    @include("{$template_view}.global-head")
 
     <!-- Syntax highlight-->
     <link rel="stylesheet" href="{{ asset($template_path.'/assets/css/prism.css') }}">
@@ -19,31 +19,24 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.global.navigation")
+            @include("{$template_view}.navigation")
 
-            <section>
-
+            <section class="bar bg-search no-mb">
                 <div class="col-md-4 offset-md-4">
-
                     <form methpd="get" action="{{ search_docs_url() }}">
                         <input type="text" class="form-control docs-search" name="s" required placeholder="{{ __('Search in documentation') }}">
                     </form>
-
                 </div>
-
             </section>
 
-
-            <section>
-
+            <section class="bar background-white no-mb">
                 <div class="container">
-                    
                     <div class="row">
 
                         <div class="col-12 mb-4">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
                                     <li class="breadcrumb-item"><a href="{{ docs_url() }}">{{ __('Documentation') }}</a></li>
                                 </ol>
                             </nav>
@@ -70,25 +63,24 @@
                             <div class="row">
                                 @foreach($featured_articles as $article)
                                 <div class="col-md-6 col-12">
-                                    <h4><i class="fas fa-caret-right"></i> <a title="{{ $article->title }}" href="{{ docs_url($article->categ_id) }}#{{ $article->slug}}">{{ $article->title }}</a></h4>
-                                </div>
-                                @endforeach
+                                    <h4><i class="fas fa-caret-right"></i>  <a title="{{ $article->title }}" href="{{ docs_url($article->categ_id) }}#{{ $article->slug}}">{{ $article->title }}</a></h4>
+                                </div>                            
+                            @endforeach
                             </div>
                         </div>
                         @endif
 
                     </div>
                 </div>
-
             </section>
 
         </div>
 
-        @include("{$template_view}.global.footer")
+        @include("{$template_view}.footer")
+
+        <script src="{{ asset($template_path.'/assets/js/prism.js') }}"></script>
 
     </div>
-
-    <script src="{{ asset($template_path.'/assets/js/prism.js') }}"></script>
 
 </body>
 

@@ -7,10 +7,10 @@
     <title>Frequently asked questions</title>
     <meta name="description" content="Frequently asked questions">
 
-    @include("{$template_view}.global.head")
+    @include("{$template_view}.global-head")
 
     <!-- Syntax highlight-->
-    <link rel="stylesheet" href="{{ asset($template_path.'/assets/vendor/prism/prism.css') }}">
+    <link rel="stylesheet" href="{{ asset($template_path.'/assets/css/prism.css') }}">
 </head>
 
 <body>
@@ -19,10 +19,9 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.global.navigation")
+            @include("{$template_view}.navigation")
 
-            <section>
-                
+            <section class="bar background-white no-mb">
                 <div class="container">
                     <div class="row">
 
@@ -61,11 +60,11 @@
 
         </div>
 
-        @include("{$template_view}.global.footer")
+        @include("{$template_view}.footer")
+
+        <script src="{{ asset($template_path.'/assets/js/prism.js') }}"></script>
 
     </div>
-
-    <script src="{{ asset($template_path.'/assets/vendor/prism/prism.js') }}"></script>
 
 </body>
 

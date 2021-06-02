@@ -2,10 +2,10 @@
 <html lang="{{ $locale }}">
 
 <head>
-    <title>{{ $topic->title }} - {{ __('Forum') }} {{ site()->short_title }}</title>
+    <title>{{ $topic->title }} - {{ __('Forum') }} {{ lang_meta()->site_short_title }}</title>
     <meta name="description" content="{{ substr(strip_tags($topic->content), 0, 300) }}">
 
-    @include("{$template_view}.global.head")
+    @include("{$template_view}.global-head")
 
     <!-- Text editor-->
     <script src="{{ asset("$template_path/assets/vendor/trumbowyg/trumbowyg.min.js") }}"></script>
@@ -26,12 +26,10 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.global.navigation")
+            @include("{$template_view}.navigation")
 
-            <section>
-
+            <section class="bar background-white no-mb">
                 <div class="container">
-
                     <div class="row">
 
                         <div class="col-12">
@@ -52,11 +50,11 @@
 
                             <div class="row">
                                 <div class="col-12 mb-3">
-                                    <span class="float-end">
+                                    <span class="float-right">
                                         <a class="btn btn-forum ml-4" href="{{ route('forum.topic.create') }}"><i class="fas fa-pen" aria-hidden="true"></i> {{ __('New topic') }}</a>
                                     </span>
 
-                                    <span class="float-start">
+                                    <span class="float-right">
                                         <form class="form-inline">
                                             <input class="form-control" name="search" placeholder="{{ __('Search in forum') }}">
                                         </form>
@@ -67,7 +65,7 @@
 
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
+                                            <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
                                             <li class="breadcrumb-item"><a href="{{ forum_url() }}">{{ __('Forum') }}</a></li>
                                             @foreach(breadcrumb($categ->id, 'forum') as $b_categ)
                                             <li class="breadcrumb-item"><a href="{{ route('forum.categ', ['slug' => $b_categ->slug]) }}">{{ $b_categ->title }}</a></li>
@@ -149,15 +147,12 @@
                     </div>
 
                 </div>
-
-                
-            </section>
-
         </div>
-
-        @include("{$template_view}.global.footer")
+        </section>
 
     </div>
+    
+    @include("{$template_view}.footer")
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
@@ -203,6 +198,7 @@
         
             });
     </script>
+    </div>
 
 </body>
 

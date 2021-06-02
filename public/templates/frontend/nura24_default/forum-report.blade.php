@@ -5,7 +5,7 @@
     <title>{{ __('Report') }}</title>
     <meta name="description" content="{{ __('Report forum content') }}">
 
-    @include("{$template_view}.global.head")
+    @include("{$template_view}.global-head")
 </head>
 
 <body>
@@ -14,12 +14,10 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.global.navigation")
+            @include("{$template_view}.navigation")
 
-            <section>
-
+            <section class="bar background-white no-mb">
                 <div class="container">
-
                     <div class="row">
 
                         <div class="col-12">
@@ -56,9 +54,7 @@
                         </div>
 
                     </div>
-
                 </div>
-
             </section>
 
         </div>

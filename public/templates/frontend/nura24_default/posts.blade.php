@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ __('Blog') }} - {{ site()->short_title }}</title>
-    <meta name="description" content="{{ __('All posts') }} - {{ site()->short_title }}">
+    <title>{{ __('Blog') }} - {{ lang_meta()->site_short_title }}</title>
+    <meta name="description" content="{{ __('All posts') }} - {{ lang_meta()->site_short_title }}">
 
-    @include("{$template_view}.global.head")
+    @include("{$template_view}.global-head")
 </head>
 
 <body>
@@ -16,12 +16,11 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.global.navigation")
+            @include("{$template_view}.navigation")
 
-            @include("{$template_view}.blocks.search-posts")
+            @include("{$template_view}.blocks.search-posts")             
 
-            <section>
-
+            <section class="bar background-white no-mb">
                 <div class="container">
                     <div class="row">
 
@@ -66,12 +65,11 @@
 
                     </div>
                 </div>
-
             </section>
 
         </div>
 
-        @include("{$template_view}.global.footer")
+        @include("{$template_view}.footer")
 
     </div>
 

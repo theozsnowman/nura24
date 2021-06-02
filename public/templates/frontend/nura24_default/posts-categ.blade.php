@@ -7,7 +7,7 @@
     <title>{{ $categ->meta_title ?? $categ->title }}</title>
     <meta name="description" content="{{ $categ->meta_description ?? $categ->description ?? $categ->title }}">
 
-    @include("{$template_view}.global.head")
+    @include("{$template_view}.global-head")
 
 </head>
 
@@ -17,14 +17,12 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.global.navigation")
+            @include("{$template_view}.navigation")
 
-            @include("{$template_view}.blocks.search-cart")
-
-            <section>
-
+            @include("{$template_view}.blocks.search-cart")             
+            
+            <section class="bar background-white no-mb">
                 <div class="container">
-
                     <div class="row">
 
                         <div class="col-12">
@@ -70,14 +68,12 @@
                         </div>
 
                     </div>
-
                 </div>
-
             </section>
 
         </div>
 
-        @include("{$template_view}.global.footer")
+        @include("{$template_view}.footer")
 
     </div>
 
