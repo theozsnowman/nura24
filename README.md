@@ -1,8 +1,17 @@
+
+<p align="center">
+    <img src="https://img.shields.io/github/stars/nuradev/nura24" alt="forks">
+    <img src="https://img.shields.io/badge/downloads-1.2k-brightgreen" alt="downloads">
+    <img src="https://img.shields.io/github/license/nuradev/nura24" alt="license">
+</p>
+    
 <p align="center"><img src="https://nura24.com/assets/img/logo-github.png" alt="Nura24"></p>
 
 ### [Nura24](https://nura24.com) is a free suite for businesses, communities, teams, collaboration or personal websites. Create a free and professional website in minutes.
 
-Forget about installing and updating tons of plugins. Forget paying hundred or even thousands USD for other suites with the same features.
+<div align="center"><a target="_blank" href="https://nura24.com"><img src="https://nura24.com/assets/img/nura24.com_1280x640.png" alt="Nura24"></a></div>
+
+### Forget about installing and updating tons of plugins. With Nura24 Free Suite you have everything you need to build professional websites, from simple / personal websites to complex portals or business websites.
 
 ### Modules:
 - **CMS**: blog, posts, pages, downloads, blocks, slider...
