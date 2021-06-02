@@ -125,7 +125,7 @@ Route::group([
     // Blog routes
     Route::get('/'.config('permalinks.posts_permalink').'/'.config('permalinks.posts_search_permalink'), 'Frontend\PostsController@search')->name('posts.search');
     Route::get('/'.config('permalinks.posts_permalink').'/'.config('permalinks.posts_tag_permalink').'/{slug}', 'Frontend\PostsController@tag')->name('posts.tag')->where(['slug' => '[a-z0-9_-]+']);
-    Route::get('/'.config('permalinks.post__permalink').'/{categ_slug}/{slug}', 'Frontend\PostsController@post')->name('post')->where(['categ_slug' => '[a-z0-9_-]+', 'slug' => '[a-z0-9_-]+']);
+    Route::get('/'.config('permalinks.post_permalink').'/{categ_slug}/{slug}', 'Frontend\PostsController@post')->name('post')->where(['categ_slug' => '[a-z0-9_-]+', 'slug' => '[a-z0-9_-]+']);
     Route::get('/'.config('permalinks.post_permalink').'/{categ_slug}/{slug}/like', 'Frontend\PostsController@like')->name('post.like')->where(['categ_slug' => '[a-z0-9_-]+', 'slug' => '[a-z0-9_-]+']);
     Route::post('/'.config('permalinks.post_permalink').'/{categ_slug}/{slug}/comment', 'Frontend\PostsController@comment')->name('post.comment')->where(['categ_slug' => '[a-z0-9_-]+', 'slug' => '[a-z0-9_-]+']);           
     Route::get('/'.config('permalinks.posts_permalink'), 'Frontend\PostsController@index')->name('posts');

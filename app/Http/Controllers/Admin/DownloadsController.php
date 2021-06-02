@@ -24,7 +24,7 @@ class DownloadsController extends Controller
         $this->UserModel = new User();    
         $this->UploadModel = new Upload();   
 
-        $this->extra_langs = DB::table('sys_lang')->where('is_default', 0)->orderBy('active', 'desc')->orderBy('name', 'asc')->get();
+        $this->extra_langs = DB::table('sys_lang')->where('is_default', 0)->where('status', '!=', 'disabled')->orderBy('name', 'asc')->get();
 
         $this->middleware(function ($request, $next) {
             $this->logged_user_role_id = Auth::user()->role_id;

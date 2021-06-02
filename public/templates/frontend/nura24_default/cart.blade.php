@@ -20,9 +20,10 @@
 
             @include("{$template_view}.blocks.search-cart")                 
 
-            <section class="bar bg-light no-mb">               
+            <section>               
 
                 <div class="container">
+                    
                     <div class="row">
 
                         <div class="col-12">

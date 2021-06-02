@@ -18,12 +18,13 @@
 
             @include("{$template_view}.navigation")
 
-            <section class="bar no-mb mt-2">
+            <section>
+
                 <div class="container">
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
                             <li class="breadcrumb-item"><a href="{{ cart_url() }}">{{ __('Shop') }}</a></li>
                             @foreach(breadcrumb($product->categ_id, 'cart') as $categ)
                             <li class="breadcrumb-item"><a href="{{ cart_url($categ->id) }}">{{ $categ->title }}</a></li>

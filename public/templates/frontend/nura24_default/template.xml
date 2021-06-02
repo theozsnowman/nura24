@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
-	<title>Default</title>
-	<description>Default template for Nura24 suite</description>
+	<title>Nova Portal</title>
+	<description>Nova Portal template for Nura24 suite</description>
 	<author>Nura24</author>
-	<version>1.1</version>    
+	<version>2.1</version>    
 	<screenshot>screenshot.jpg</screenshot>
 </template>

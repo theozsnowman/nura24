@@ -5,9 +5,9 @@
 
 <div class="card-body">
 
-	@if(! check_module('inbox'))
+	@if(! check_module('contact'))
 	<div class="alert alert-danger">
-		{{ __('Warning. Knowledge Base module is disabled. You can manege content, but module is disabled for visitors and registered users') }}. <a href="{{ route('admin.config.modules') }}">{{ __('Manage modules') }}</a>
+		{{ __('Warning. Contact page module is disabled. You can manege content, but module is disabled for visitors and registered users') }}. <a href="{{ route('admin.config.modules') }}">{{ __('Manage modules') }}</a>
 	</div>
 	@endif
 

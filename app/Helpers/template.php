@@ -75,6 +75,20 @@ if (!function_exists('date_locale')) {
 	}	
 }
 
+// Website general settings
+if (!function_exists('site')) {
+	function site() {
+
+		$meta = DB::table('sys_lang')
+			->where('id', active_lang()->id)
+			->first();  
+			
+		$array = array('short_title' => $meta->site_short_title ?? null, 'meta_title' => $meta->homepage_meta_title ?? null, 'meta_description' => $meta->homepage_meta_description ?? null);
+		
+		return(json_decode(json_encode($array)));	        
+    }
+}
+
 
 // Meta info from language / locale
 if (!function_exists('lang_meta')) {
@@ -84,51 +98,6 @@ if (!function_exists('lang_meta')) {
             ->first();   
 
         return $meta;                   
-    }
-}
-
-// Pages with a specific badge
-if (!function_exists('badge_pages')) {
-	function badge_pages($badge) {
-        $items = DB::table('pages')
-			->where('active', 1)
-			->whereRaw("FIND_IN_SET(?, badges) > 0", [$badge])		
-			->where('lang_id', active_lang()->id)
-			->orderBy('title', 'asc')
-            ->paginate(24);   
-
-        return $items;                   
-    }
-}
-
-
-// SINGLE page with a specific badge.
-// If there are multiple pages with same badge (same language), only first page is returned
-if (!function_exists('badge_page')) {
-	function badge_page($badge) {
-        $item = DB::table('pages')
-			->where('active', 1)
-			->whereRaw("FIND_IN_SET(?, badges) > 0", [$badge])		
-			->where('lang_id', active_lang()->id)
-			->first();
-
-        return $item;                   
-    }
-}
-
-
-// URL for page with a specific badge.
-// If there are multiple pages with same badge (same language), only first page is returned
-if (!function_exists('badge_page_url')) {
-	function badge_page_url($badge) {
-        $item = DB::table('pages')
-			->where('active', 1)
-			->whereRaw("FIND_IN_SET(?, badges) > 0", [$badge])			
-			->where('lang_id', active_lang()->id)
-			->first();		
-		if(! $item) return null;   		
-
-		return page_url($item->id);
     }
 }
 
@@ -251,8 +220,8 @@ if (!function_exists('posts')) {
 
 
 // generate URL for homepage
-if (!function_exists('homepage_url')) {
-	function homepage_url() {      		
+if (!function_exists('homepage')) {
+	function homepage() {      		
 		return route('homepage', ['lang' => (active_lang()->id == default_lang()->id) ? null : active_lang()->code]);
 	}	
 }
@@ -394,6 +363,57 @@ if (!function_exists('profile_url')) {
 		return route('profile', ['lang' => (default_lang()->id == active_lang()->id) ? null : active_lang()->code, 'id' => $user->id, 'slug' => $user->slug]);
 
 	}	
+}
+
+
+
+// SINGLE page details.
+// if identificator is INTEGER, get page from ID
+// if identificator is STRING, get page from badge. If there are multiple pages with same badge (same language), only first page is returned
+if (!function_exists('page')) {
+	function page($identificator) {
+
+		if(! is_int($identificator)) {
+			$page = DB::table('pages')
+				->select('pages.*', 'pages.parent_id as parent_page_id', DB::raw('(SELECT slug FROM pages WHERE id = parent_page_id) as parent_slug'))  
+				->where('active', 1)
+				->whereRaw("FIND_IN_SET(?, badges) > 0", [$identificator])		
+				->where('lang_id', active_lang()->id)
+				->first();
+		}
+		else {
+			$page = DB::table('pages')
+				->select('pages.*', 'pages.parent_id as parent_page_id', DB::raw('(SELECT slug FROM pages WHERE id = parent_page_id) as parent_slug'))  
+				->where('active', 1)
+				->where('id', $identificator)
+				->first();	
+		}     
+
+
+		if(! $page) return null;		
+
+		if($page->parent_slug) // page is child of a parent page
+			$page->url = route('child_page', ['lang' => (default_lang()->id != $page->lang_id) ? lang($page->lang_id)->code : null, 'slug' => $page->slug, 'parent_slug' => $page->parent_slug]);
+		else			
+			$page->url = route('page', ['lang' => (default_lang()->id != $page->lang_id) ? lang($page->lang_id)->code : null, 'slug' => $page->slug]);
+
+        return $page;                   
+    }
+}
+
+
+// Get page details with a specific badge
+if (!function_exists('pages')) {
+	function pages($badge) {							
+        $items = DB::table('pages')
+			->where('active', 1)
+			->whereRaw("FIND_IN_SET(?, badges) > 0", [$badge])		
+			->where('lang_id', active_lang()->id)
+			->orderBy('title', 'asc')
+            ->paginate(24);   
+
+		return $items;      			
+    }
 }
 
 
@@ -585,23 +605,6 @@ if (!function_exists('badge_cart_categ')) {
 }
 
 
-// URL for category with a specific badge.
-// If there are multiple categories with same badge (same language), only first page is returned
-if (!function_exists('badge_page_url')) {
-	function badge_page_url($badge) {
-        $item = DB::table('pages')
-			->where('active', 1)
-			->whereRaw("FIND_IN_SET(?, badges) > 0", [$badge])			
-			->where('lang_id', active_lang()->id)
-			->first();		
-		if(! $item) return null;   		
-
-		return page_url($item->id);
-    }
-}
-
-
-
 // generate URL for community category, using category ID
 // generate URL for community home, inf no category ID is passed
 if (!function_exists('forum_url')) {
@@ -617,7 +620,6 @@ if (!function_exists('forum_url')) {
 		}
 	}	
 }
-
 
 
 // latest forum topics
@@ -650,3 +652,20 @@ if (!function_exists('forum_posts')) {
         return $posts;                   
     }
 }
+
+
+if (!function_exists('account_url')) {
+	function account_url() {
+
+		if(logged_user()) {
+			if(logged_user()->role == 'admin') return route('admin');
+			else if(logged_user()->role == 'internal') return route('internal');
+			else if(logged_user()->role == 'user') return route('user');
+			else return route('homepage', ['lang' => (active_lang()->id == default_lang()->id) ? null : active_lang()->code]);
+		}
+		
+		else return route('homepage', ['lang' => (active_lang()->id == default_lang()->id) ? null : active_lang()->code]);
+
+	}
+}
+

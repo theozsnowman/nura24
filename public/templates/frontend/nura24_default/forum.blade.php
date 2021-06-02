@@ -2,10 +2,11 @@
 <html lang="{{ $locale }}">
 
 <head>
-    <title>{{ __('Community forum') }} - {{ lang_meta()->site_short_title }}</title>
+    <title>{{ __('Community forum') }} - {{ site()->short_title }}</title>
     <meta name="description" content="Forum">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
+
 </head>
 
 <body>
@@ -14,12 +15,13 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar background-white no-mb">
+            <section>
+
                 <div class="container">
-                    <div class="row">
 
+                    <div class="row">
 
                         <div class="col-12">
 
@@ -33,11 +35,11 @@
 
                                 <div class="col-12 mb-1">
 
-                                    <div class="float-right">
-                                        <a class="btn btn-forum ml-4" href="{{ route('forum.topic.create') }}"><i class="fas fa-pen" aria-hidden="true"></i> {{ __('New topic') }}</a>
+                                    <div class="float-end">
+                                        <a class="btn btn-forum ms-4" href="{{ route('forum.topic.create') }}"><i class="fas fa-pen" aria-hidden="true"></i> {{ __('New topic') }}</a>
                                     </div>
 
-                                    <div class="float-right">
+                                    <div class="float-start">
                                         <form class="form-inline">
                                             <input class="form-control" name="s" placeholder="{{ __('Search in forum') }}">
                                         </form>
@@ -45,9 +47,9 @@
 
                                     <div class="clearfix mb-3"></div>
 
-                                    <nav aria-label="breadcrumb">
+                                    <nav aria-label="breadcrumb" class="forum-breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
+                                            <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
                                             <li class="breadcrumb-item active"><a href="{{ forum_url() }}">{{ __('Forum') }}</a></li>
                                         </ol>
                                     </nav>
@@ -142,11 +144,12 @@
 
                     </div>
                 </div>
+
             </section>
 
         </div>
 
-        @include("{$template_view}.footer")
+        @include("{$template_view}.global.footer")
 
     </div>
 

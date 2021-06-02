@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ $categ->meta_title}} | {{ $site_short_title}}</title>
+    <title>{{ $categ->meta_title}} | {{ site()->short_title }}</title>
     <meta name="description" content="{{ $categ->meta_description}}">
 
     @include("{$template_view}.global-head")   
@@ -20,14 +20,15 @@
 
             @include("{$template_view}.blocks.search-cart")      
 
-            <section class="bar background-white no-mb">
+            <section>
+
                 <div class="container">
 
                     <div class="row">
                         <div class="col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
                                     <li class="breadcrumb-item"><a href="{{ cart_url() }}">{{ __('Shop') }}</a></li>
                                     @foreach(breadcrumb($categ->id, 'cart') as $nav_categ)
                                     <li class="breadcrumb-item"><a href="{{ cart_url($nav_categ->id) }}">{{ $nav_categ->title }}</a></li>
@@ -103,6 +104,7 @@
 
                     </div>
                 </div>
+                
             </section>
 
         </div>

@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ $s}} - {{ __('search in documentation') }}</title>
-    <meta name="description" content="{{ $s}} - {{ __('search in documentation') }} | {{ lang_meta()->site_short_title }}">
+    <meta name="description" content="{{ $s}} - {{ __('search in documentation') }} | {{ site()->short_title }}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 
     <!-- Syntax highlight-->
-    <link rel="stylesheet" href="{{ asset("$template_path/assets/css/prism.css") }}">
+    <link rel="stylesheet" href="{{ asset("$template_path/assets/vendor/prism/prism.css") }}">
 </head>
 
 <body>
@@ -19,24 +19,30 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar bg-search no-mb">
+            <section>
+
                 <div class="col-md-4 offset-md-4">
+
                     <form methpd="get" action="{{ search_docs_url() }}">
                         <input type="text" class="form-control docs-search" name="s" placeholder="{{ __('Search in documentation') }}">
                     </form>
+
                 </div>
+
             </section>
 
-            <section class="bar background-white no-mb">
+
+            <section>
+
                 <div class="container">
 
                     <div class="row">
                         <div class="col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
                                     <li class="breadcrumb-item"><a href="{{ docs_url() }}">{{ __('Documentation') }}</a></li>
                                     <li class="breadcrumb-item">{{ __('Search results') }}</li>
                                 </ol>
@@ -88,16 +94,18 @@
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
 
         </div>
 
-        @include("{$template_view}.footer")
-
-        <script src="{{ asset($template_path.'/assets/js/prism.js') }}"></script>
+        @include("{$template_view}.global.footer")
 
     </div>
+
+    <script src="{{ asset($template_path.'/assets/vendor/prism/prism.js') }}"></script>
 
 </body>
 

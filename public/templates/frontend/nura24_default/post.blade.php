@@ -7,7 +7,7 @@
     <title>{{ $post->meta_title ?? $post->title}}</title>
     <meta name="description" content="{{ $post->meta_description ?? $post->summary ?? strip_tags(substr($post->content, 0, 300)) }}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 
     <meta property="og:title" content="{{ $post->title }}" />
     @if($post->image)<meta property="og:image" content="{{ image($post->image) }}" />@endif
@@ -42,11 +42,11 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
             @include("{$template_view}.blocks.search-posts")             
             
-            <section class="bar no-mb">
+            <section>
 
                 <div class="container">
 
@@ -56,7 +56,7 @@
 
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
                                     <li class="breadcrumb-item"><a href="{{ posts_url() }}">{{ __('Blog') }}</a></li>
                                     @foreach(breadcrumb($post->categ_id) as $categ)
                                     <li class="breadcrumb-item"><a href="{{ posts_url($categ->id) }}">{{ $categ->title }}</a></li>
@@ -234,7 +234,7 @@
 
         </div>
 
-        @include("{$template_view}.footer")
+        @include("{$template_view}.global.footer")
 
     </div>
 

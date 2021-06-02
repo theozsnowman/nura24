@@ -2,7 +2,7 @@
 /*
 * IMPORTANT!!! Do NOT change this file. 
 * If you want to edit permalinks, you MUST edit them in .env file
-* If you have multiple languages you mmust add permalinks in .env for each language. Example: "permalink_posts_es = blog" (add _LANGUAGE-CODE for each permalink)
+* If you have multiple languages you mmust add permalinks in .env for each language. Example: "SLUG_POSTS_ES = blog" (for ES language code)
 */
 
 $reques_uri = $_SERVER['REQUEST_URI'];

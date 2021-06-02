@@ -1,7 +1,7 @@
 .btn-forum {
     color: #fff;
-    background-color: #6595be;
-    border-color: #6595be;
+    background-color: #4c73ad;
+    border-color: #4c73ad;
 }
 
 .forum-link {
@@ -30,9 +30,9 @@
 }
 
 .card-header-forum {
-    padding: 1rem;
+    padding: 0.9rem;
     margin-bottom: 0;
-    background-color: #557da0;
+    background-color: #143059;
     color: #fff;
     border-bottom: none;
     letter-spacing: 0.06em;

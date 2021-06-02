@@ -4,14 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ __('Documentation') }}: {{ $categ->title}} | {{ lang_meta()->site_short_title }}</title>
+    <title>{{ __('Documentation') }}: {{ $categ->title}} | {{ site()->short_title }}</title>
     <meta name="description" content="{{ __('Documentation for') }} {{ $categ->title}}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 
     <!-- BEGIN CSS for this page -->
-    <!-- Syntax highlight-->
-    <link rel="stylesheet" href="{{ asset("$template_path/assets/css/prism.css") }}">
+    <link rel="stylesheet" href="{{ asset("$template_path/assets/vendor/prism/prism.css") }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
     <!-- END CSS for this page -->
 </head>
@@ -22,24 +21,30 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar bg-search no-mb">
+            <section>
+
                 <div class="col-md-4 offset-md-4">
+
                     <form methpd="get" action="{{ search_docs_url() }}">
                         <input type="text" class="form-control docs-search" name="s" required placeholder="{{ __('Search in documentation') }}">
                     </form>
+
                 </div>
+
             </section>
 
-            <section class="bar background-white no-mb">
+
+            <section>
+
                 <div class="container">
 
                     <div class="row">
                         <div class="col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ homepage_url() }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ homepage() }}">{{ __('Home') }}</a></li>
                                     <li class="breadcrumb-item"><a href="{{ docs_url() }}">{{ __('Documentation') }}</a></li>
                                     @foreach(breadcrumb($categ->id, 'docs') as $categ)
                                     <li class="breadcrumb-item"><a href="{{ docs_url($categ->id) }}">{{ $categ->title }}</a></li>
@@ -103,20 +108,21 @@
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
 
         </div>
 
-        @include("{$template_view}.footer")
-
-        <script src="{{ asset($template_path.'/assets/js/prism.js') }}"></script>
-
-        <!-- BEGIN Java Script for this page -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
-        <!-- END Java Script for this page -->
+        @include("{$template_view}.global.footer")
 
     </div>
+
+    <!-- BEGIN Java Script for this page -->
+    <script src="{{ asset($template_path.'/assets/vendor/prism/prism.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+    <!-- END Java Script for this page -->
 
 </body>
 

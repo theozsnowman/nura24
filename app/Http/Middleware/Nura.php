@@ -65,24 +65,14 @@ class Nura
         $lang = $request->lang;
        
         if($lang) {                           
-            $sys_lang_query = DB::table('sys_lang')->where('code', $lang)->where('active', 1)->first();   
+            $sys_lang_query = DB::table('sys_lang')->where('code', $lang)->where('status', 'active')->first();   
             if(! $sys_lang_query) return redirect('/');
             
             $locale = $sys_lang_query->code ?? null;        
-            $setlocale = $sys_lang_query->locale ?? null;       
-            
-            // SEO and homepage
-            $site_short_title = $sys_lang_query->site_short_title ?? null;        
-            $homepage_meta_title = $sys_lang_query->homepage_meta_title ?? null;        
-            $homepage_meta_description = $sys_lang_query->homepage_meta_description ?? null;        
+            $setlocale = $sys_lang_query->locale ?? null;                               
         } else {
             $locale = default_lang()->code ?? 'en';
-            $setlocale = default_lang()->locale ?? 'en';    
-
-            // SEO and homepage
-            $site_short_title = default_lang()->site_short_title ?? null;        
-            $homepage_meta_title = default_lang()->homepage_meta_title ?? null;        
-            $homepage_meta_description = default_lang()->homepage_meta_description ?? null;     
+            $setlocale = default_lang()->locale ?? 'en';                
         }               
 
 
@@ -101,13 +91,7 @@ class Nura
         View::share('template_view', 'frontend/'.($config->template ?? 'nura24_default'));
         
         View::share('request_path', $request->path() ?? null);
-
-        View::share('site_short_title', $site_short_title ?? null);
         
-        View::share('homepage_meta_title', $homepage_meta_title ?? null);
-        
-        View::share('homepage_meta_description', $homepage_meta_description ?? null);
-
         if($template_cookie ?? null) return $next($request)->cookie($template_cookie);
         else return $next($request);
     }

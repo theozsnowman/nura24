@@ -7,7 +7,7 @@
     <title>{{ $page->meta_title ?? $page->title}}</title>
     <meta name="description" content="{{ $page->meta_description ?? substr(strip_tags($page->content), 0, 250) }}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 
 </head>
 
@@ -17,22 +17,24 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar no-mb">
+            <section>
+
                 <div class="container">
-                    <div class="heading text-center">
+                    <div class="heading mb-3">
                         <h1>{{ $page->title }}</h1>
                     </div>
 
                     @if($page->image)<img class="img-fluid card-img-top mb-4" src="{{ asset('uploads/'.$page->image) }}" alt="{{ $page->title }}" title="{{ $page->title }}">@endif
                     {!! $page->content !!}
                 </div>
+                
             </section>
 
         </div>
 
-        @include("{$template_view}.footer")
+        @include("{$template_view}.global.footer")
 
     </div>
 

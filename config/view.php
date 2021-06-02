@@ -15,6 +15,7 @@ return [
 
     'paths' => [
         //resource_path('views'),
+        getcwd().'/templates',
         public_path('templates'),
     ],
 

@@ -5,7 +5,7 @@
     <title>{{ __('Create forum topic') }}</title>
     <meta name="description" content="{{ __('Create forum topic') }}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 
     <!-- Text editor-->
     <script src="{{ asset("$template_path/assets/vendor/trumbowyg/trumbowyg.min.js") }}"></script>
@@ -25,10 +25,12 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar background-white no-mb">
+            <section>
+
                 <div class="container">
+
                     <div class="row">
 
                         <div class="col-12">
@@ -100,12 +102,12 @@
                     </div>
 
                 </div>
+
+            </section>
+
         </div>
-        </section>
 
-    </div>
-
-    @include("{$template_view}.footer")
+        @include("{$template_view}.global.footer")
 
     </div>
 

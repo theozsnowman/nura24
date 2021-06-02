@@ -7,7 +7,7 @@
     <title>{{ $download->meta_title ?? $download->title }}</title>
     <meta name="description" content="{{ $download->meta_description ?? $download->title }}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 </head>
 
 <body>
@@ -16,9 +16,10 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar no-mb">
+            <section>
+
                 <div class="container">
 
                     <h1>{{ __('Download') }} {{ $download->title }}</h1>
@@ -88,11 +89,12 @@
                     @if($download->content)<div class="mt-4 mb-3">{!! $download->content !!}</div>@endif
 
                 </div>
+
             </section>
 
         </div>
 
-        @include("{$template_view}.footer")
+        @include("{$template_view}.global.footer")
 
     </div>
 

@@ -1,5 +1,5 @@
 <div class="card-header">
-    <h3><i class="far fa-plus-square"></i> {{ __('Create block') }} - {{ $group->title }} </h3>
+    <h3><i class="far fa-plus-square"></i> {{ __('Create block') }} - {{ $group->label }} </h3>
 </div>
 <!-- end card-header -->
 
@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin') }}">{{ __('Dashboard') }}</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.blocks.groups') }}">{{ __('Blocks groups') }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('admin.blocks.groups.content', ['id' => $group->id]) }}">{{ $group->title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.blocks.groups.content', ['id' => $group->id]) }}">{{ $group->label }}</a></li>
             <li class="breadcrumb-item active">{{ __('Create block') }}</li>
         </ol>                                
     </nav>

@@ -2,10 +2,10 @@
 <html lang="{{ $locale }}">
 
 <head>
-    <title>{{ $categ->title}} | {{ lang_meta()->site_short_title }} {{ __('forum') }}</title>
-    <meta name="description" content="{{ $categ->description ?? $categ->title}} - {{ lang_meta()->site_short_title }} {{ __('forum') }}">
+    <title>{{ $categ->title}} | {{ site()->short_title }} {{ __('forum') }}</title>
+    <meta name="description" content="{{ $categ->description ?? $categ->title}} - {{ site()->short_title }} {{ __('forum') }}">
 
-    @include("{$template_view}.global-head")
+    @include("{$template_view}.global.head")
 </head>
 
 <body>
@@ -14,10 +14,12 @@
 
         <div id="content-wrap">
 
-            @include("{$template_view}.navigation")
+            @include("{$template_view}.global.navigation")
 
-            <section class="bar background-white no-mb">
+            <section>
+
                 <div class="container">
+
                     <div class="row">
 
                         <div class="col-12">
@@ -32,11 +34,11 @@
 
                                 <div class="col-12">
 
-                                    <span class="float-right">
-                                        <a class="btn btn-forum ml-4" href="{{ route('forum.topic.create') }}"><i class="fas fa-pen" aria-hidden="true"></i> {{ __('New topic') }}</a>
+                                    <span class="float-end">
+                                        <a class="btn btn-forum ms-4" href="{{ route('forum.topic.create') }}"><i class="fas fa-pen" aria-hidden="true"></i> {{ __('New topic') }}</a>
                                     </span>
 
-                                    <span class="float-right">
+                                    <span class="float-start">
                                         <form class="form-inline">
                                             <input class="form-control" name="search" placeholder="{{ __('Search in forum') }}">
                                         </form>
@@ -203,12 +205,14 @@
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
 
         </div>
 
-        @include("{$template_view}.footer")
+        @include("{$template_view}.global.footer")
 
     </div>
 

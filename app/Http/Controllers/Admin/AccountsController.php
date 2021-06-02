@@ -508,8 +508,8 @@ class AccountsController extends Controller
      * Accounts permissions
      */
     public function permissions(Request $request)
-    {      
-        if(! ($this->logged_user_role == 'admin')) return redirect(route('admin')); 
+    {                      
+        if(! (logged_user()->role == 'admin')) return redirect(route('admin')); 
 
         $search_user_id = $request->search_user_id;
         $search_terms = $request->search_terms;                    
@@ -532,7 +532,7 @@ class AccountsController extends Controller
 
         $modules_permissions = array();        
 
-        $modules = DB::table('sys_modules')->orderBy('active', 'desc')->orderBy('module')->get();
+        $modules = DB::table('sys_modules')->where('status', '!=', 'disabled')->orderBy('module', 'asc')->orderBy('module')->get();
 
         foreach($modules as $module) {
             
@@ -545,7 +545,7 @@ class AccountsController extends Controller
 
             }
 
-            $modules_permissions[] = array('module_id' => $module->id, 'module' => $module->module, 'module_label' => $module->label, 'module_active' => $module->active, 'permissions' => $permissions);
+            $modules_permissions[] = array('module_id' => $module->id, 'module' => $module->module, 'module_label' => $module->label, 'module_status' => $module->status, 'permissions' => $permissions);
 
         }
 
@@ -567,7 +567,7 @@ class AccountsController extends Controller
     */
     public function update_permissions(Request $request) {
         
-        if(! ($this->logged_user_role == 'admin')) return redirect(route('admin')); 
+        if(! (logged_user()->role == 'admin')) return redirect(route('admin')); 
 
         // disable action in demo mode:
         if(config('app.demo_mode')) return redirect(route('admin'))->with('error', 'demo');       
