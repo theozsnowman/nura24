@@ -40,7 +40,7 @@ class UpdateController extends Controller
         return view('admin/account', [
             'view_file' => 'core.update',
             'active_submenu' => 'config.general',
-            'menu_section' => 'tools.update',
+            'menu_section' => 'tools.update',        
         ]);
     }
 
@@ -55,8 +55,8 @@ class UpdateController extends Controller
             ['value' => now()]
         ); 
 
-        if($checked_version == config('nura.version')) return redirect(route('admin.tools.update'))->with('success', 'update_not_available');  
-        else return redirect(route('admin.tools.update'))->with('success', 'update_available');  
+        if($checked_version == config('version.version')) return redirect(route('admin.tools.update'))->with('success', 'update_not_available');  
+        else return redirect(route('admin.tools.update'))->with('success', 'update_available')->with('newversion', $checked_version);  
     }
 
 
@@ -95,12 +95,8 @@ class UpdateController extends Controller
         }
 
 
-        // move migration file
-        $migration_filename = date("Y_m_d_").Carbon::now()->timestamp.'_latest.php';
-        copy($updatesFolder."/migrations/latest.php", database_path()."/migrations/update/".$migration_filename);
-
         // update database tables
-        //Artisan::call('migrate --force --path=database/migrations/update/'.$migration_filename);
+        Artisan::call('migrate --force');
 
         // copy public folders and files
         recurseCopy($updatesFolder."/public", public_path());
